@@ -1,0 +1,16 @@
+\begin{table*}[t]
+	\begin{center}
+		\caption{\label{perceptron} Averaged perceptron algorithm}
+		\begin{tabular}{|l|l|}
+			\hline
+			\bf Inputs & Training examples ($x_i,y_i$) \\
+			\bf Initialization & $\vec{w}$ = 0 \\
+			\bf Output & averaged weights $\vec{w}$ \\
+			\hline
+			\bf Algorithm 	& For $t = 1 ...T, i = 1 ...n$ \\
+			& --- Calculate $F(x_i) = argmax_{y \in Beam(x_i)}Score(y)$ \\
+			& --- If $(F(x_i) \neq y_i)$ then $\vec{w} = \vec{w} + \Phi(y_i) - \Phi(z_i)$ \\
+			\hline							
+		\end{tabular}
+	\end{center}
+\end{table*}

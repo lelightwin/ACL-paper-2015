@@ -1,0 +1,29 @@
+\section{Experiment}
+\subsection{Preparation}
+We evaluate our A* shift-reduce parser on the Wall Street Journal (WSJ) corpus of the Penn Treebank project with the standard split: sections 2-21 were used for training, section 22 as a development set, and section 23 was used for testing. All our experiments reported in this paper was performed on [our computer configuration].
+
+We used the head finder of \cite{ref:1999Collins} to define the head constituent tag for each phrase in the corpus, and adapted the binarization of \cite{ref:2009Zhang} to binarize our grammar rules. We also used Stanford PoS tagger (with the accuracy = 97\%) to produce the tagged sentence as an input for our shift-reduce constituent parsing. To evaluate the ParseVal F-score, we utilize EVALB program.
+
+\subsection{The experiment results on development set}
+On the development set, we make an experiment of comparing our proposal A* decoder with beam search decoder. We also test these decoders in both baseline and simplified feature template. The experiment results can be viewed in table \ref{first experiment}.
+
+\subsection{The experiment results on test set}
+On the test set, we make an experiment for comparing our A* parser with the state-of-the-art parsing systems. The results of this experiment are shown in table \ref{second experiment}.
+\begin{table}
+	\begin{center}
+		\caption{\label{second experiment} Results of the final experiment on test set to compare our A* shift reduce parser with other parsing system.}
+		\begin{tabular}{|l|l|l|}
+			\hline \bf System & \bf F-score \\ \hline
+			Johnson and Charniak (2005) & 91.4\% \\
+			Mc Closky (2006) & 92.1\%\\
+			Collins (1999), Bikel (2004) & 87.7\% \\
+			Berkeley Parser & 90.1\%  \\
+			Stanford Parser &  90.4\% \\
+			SSN parser - Henderson(2004) & 89.4\%  \\
+			Zhang Yue - baseline (2012) & 89.8\% \\
+			\textbf{This paper} & 91.1\% \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+

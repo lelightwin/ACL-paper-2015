@@ -1,0 +1,47 @@
+Hi Win,
+
+Thank you. I will list some comments below. It may contain my misunderstanding. Please correct me in that case. I will give more detailed comments when you give us newer version.
+
+First, the introduction may require rewriting. When I first read the introduction, I feel that the points and contributions of this paper are vague, or your mentioned contributions seem weaker than what you have actually done.
+
+I think the introduction should contain the following information:
+(a): The problem what we want to address in the paper;
+(b): The reason why we focus on that problem (motivation);
+(c): The essential idea of how to solve the problem. Here the essential difference (i.e., contributions) from the previous approach would also be explained.
+
+Typically, the motivation (b) is gradually explained in the first one or two paragraphs, then the specific problem (a) is introduced. When considering such story, I think it is more easy to make clear first the problem (a), which is what I feel difficult to grasp in the current version.
+
+One problem I noticed in the current version, which makes (a) vague, is that previous studies about locally trained model and globally trained model are not clearly distinguished. For example, in the end of third paragraph, you mentioned "However, in our knowledge, the exact search problem in feature based constituent shift reduce parsing system (Zhang, 2009) still remains unsolved.", which sounds like the exact search of transition-based dependency parsing is a solved problem. I think it is not. In my understanding, there is no known globally trained parser doing exact search both for dependency and constituency. We focus on constituency parser, but the introduced idea, such as score normalization and cascade A* heuristics would be important when considering globally trained dependency parser as well.
+
+So I think the point that should be emphasized is that this is the first work of a shift-reduce parser which employs exact search for a globally trained model (both for dependency and constituency; we focus on constituency here). So maybe the introduction starts with a discussion why we consider globally trained model of shift-reduce parser.
+
+This is my opinion (one suggestion) about the motivation for this study. The approach of shift-reduce parser is very successful. The local classifier exploits very rich features and this design leads very high accuracies, defeating conventional CKY-based parsers such as Berkeley or Stanford. However, all these models use inexact search (beam search), so it causes parse errors.  We don't know the effect of this search error in shift-reduce parsers. There are few parsers with exact search such as Sagae and Lavie, but all these models are trained locally (the model is maximum entropy). How to combine globally trained model like structured perceptron with exact search and the importance (empirical performance) of such exact search are unknown.
+
+Could you reconstruct and itemize what is described (or write fully, if it is more easy) in each paragraph of the introduction?
+
+In Section 2:
+
+- I think the explanation of averaged perceptron is not so important because it is very basic these days. Maybe this subsection can be removed entirely or very short summarization such as one line explanation seems sufficient. Dynamic programming and and action modification (removing unary rules) are more important.
+- I think it is more natural to explain dynamic programming just after the conventional beam-search based parser. This is the first work of dynamic programming to constituency shift-reduce parser, so more explanation would be plausible. For example, more rigorous explanation of difficulty caused by unary rule may be required. I remember the modification of actions is to solve the problem caused when combining graph-structured stuck and constituency shift-reduce parser. If the explanation of this has been done, introducing modification of actions would be more naturally followed.
+
+In Section 3: It is better to put some expiation about  overall structure of the parser before this section (maybe the end of section 2?).
+
+I'm not sure whether the theory presented in this section is correct. In my understanding, one of Zhao's work is reducing time complexity of arc-factored model from O(n^7) of Liang Huang to O(n^6) by removing dependencies to step number (Is it correct?; I'm wondering whether this technique is also applicable to Liang Huang's beam search parser). This complexity comes from three span indices and three head indices. The current parser use graph-structured stuck so I think the complexity is slightly different from the result of naive CKY parser. I may miss something.
+
+You said Zhao's exact search is possible because the time complexity is O(n^6), but I don't think so. They actually used more rich features. I think the reason why BFS to the locally trained model is tractable (such as Sagae and Lavie) is because the distribution of each score is much sparser than the current model. In a locally trained max-ent model, each score is calculated by first exponentiate all feature scores and then normalized. This exponentiation makes variance between scores across different actions much bigger.
+
+The contents in section 4 seem ok. It is easy to understand. Adding reference to the cascade heuristics to point to the correctness of this method is important.
+
+I don't think it is necessary to add more experiments from now. One concern is evaluating importance of exact search in a different way. I think one way is to compare performance between A* (for simpler model) and Liang Huang's method of combination of dynamic programming and beam search, but it may be hard. If you have an implementation of DP parser, running this experiment may be interesting. I think you don't have to run 40 iterations for this evaluation because Liang Huang reported his parser converged around 17 iterations.
+
+
+About the tex usage: use bibtex instead of manually listing bibitems. For a paper in ACL anthology, you can get bibtex by modifying url from ".pdf" to ".bib". For example, the bib of
+http://www.aclweb.org/anthology/D/D14/D14-1002.pdf
+is obtained from
+http://www.aclweb.org/anthology/D/D14/D14-1002.bib .
+
+It enables automatic sort of authors in an alphabetical order.
+
+Hiroshi
+
+

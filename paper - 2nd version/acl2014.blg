@@ -1,0 +1,17 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: acl2014.aux
+The style file: apalike.bst
+Database file #1: acl2014.bib
+Name 1 in "Mengqiu,Wang, Kenji,Sagae, and Teruko,Mitamura" has a comma at the end for entry 2006Wang
+while executing---line 1020 of file apalike.bst
+Too many commas in name 1 of "Mengqiu,Wang, Kenji,Sagae, and Teruko,Mitamura" for entry 2006Wang
+while executing---line 1020 of file apalike.bst
+Name 1 in "Mengqiu,Wang, Kenji,Sagae, and Teruko,Mitamura" has a comma at the end for entry 2006Wang
+while executing---line 1020 of file apalike.bst
+Too many commas in name 1 of "Mengqiu,Wang, Kenji,Sagae, and Teruko,Mitamura" for entry 2006Wang
+while executing---line 1020 of file apalike.bst
+Warning--empty booktitle in 1991Tomita
+Name 1 in "Mengqiu,Wang, Kenji,Sagae, and Teruko,Mitamura" has a comma at the end for entry 2006Wang
+while executing---line 1095 of file apalike.bst
+Too many commas in name 1 of "Mengqiu,Wang, Kenji,Sagae, and Teruko,Mitamura" for entry 2006Wang
+while executing---line 1095 of file apalike.bst
+(There were 6 error messages)

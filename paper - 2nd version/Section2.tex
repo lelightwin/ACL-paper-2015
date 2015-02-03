@@ -1,0 +1,64 @@
+\section {Our dynamic Shift-Reduce parser} 
+In order to apply the A* heuristic, we have developed our own shift-reduce constituent parser based on dynamic algorithm. Within our knowledge, this is the first implementation of dynamic algorithm on shift-reduce constituent parsing.
+\input{Figures/figure_SRDeduct}
+\input{Figures/figure_SRDeduct_modified}
+\subsection{Conventional shift-Reduce Constituent Parsing}
+
+Shift-reduce parsing can be considered as a state transition system, which means that it includes a set of states and actions. From a current state, each action will create a new corresponding state. A state consists of two data structures: a stack \textit{S} of constructed phrases and a queue \textit{Q} of remain incoming words in the input sentence. As in \cite{2009Zhang}, a constituent parser have four types of action:
+
+\input{Tables/table_perceptron.tex}
+
+\begin{itemize}
+	\item SHIFT (denoted sh): pop the front word $q_0$ from \textit{Q} and push it onto stack \textit{S}.
+	\item B-REDUCE-L/R(X) (denoted b$_{L/R}(X)$): pop the two top nodes $s_0$ and $s_1$ from \textit{S} and use the binary rule set to combine them into new constituent node with label X, and push X onto \textit{S}. The parameter [L/R] decide the head of compound nodes to be left or right, respectively.
+	\item U-REDUCE(X) (denoted u$(X)$): pop the top nodes $s_0$ off \textit{S}, use the unary rule set to combine them into new constituent node with label X, and push X onto stack \textit{S}.
+	\item FINISH (denoted $Fin$): pop the root node off \textit{S} and end the shift-reduce parsing. 
+\end{itemize}
+Figure \ref{deductive} illustrates the deductive system of these four shift-reduce actions \footnote{$\Phi(s)$ is the feature function of state $s$. Based on that, $\Phi_a(j,S)$ is the feature function of current state $(j,S)$ with the action $a$.}. Similar to \cite{2009Zhang}, our conventional parser was trained by global averaged perceptron which has been shown in table \ref{perceptron}.
+
+\input{Tables/baseline_feature}
+
+\subsection{Baseline feature template}
+We adopted the baseline features from \cite{2009Zhang} which are shown in table \ref{baseline feat}. In this template, $s_i$ represents the $i^{th}$ item on the top of the stack S and $q_i$ denotes the $i^{th}$ item in the queue Q of incoming words. $s_il$, $s_ir$ and $s_iu$ are respectively the left, right, and unary child of $s_i$. There are three components which are used for each item X:
+\begin{itemize}
+	\item $X.t$ - denotes the PoS of head lexical of X.
+	\item $X.w$ - denotes the head lexical of X.
+	\item $X.c$ - denotes the constituent tag of X.
+\end{itemize}
+
+\subsection{Our modified shift-reduce actions}
+In conventional shift-reduce constituent parsing, the parse trees for an input sentence may have different number of shift-reduce actions due to the unary reduce actions. As in figure \ref{deductive}, the total number of actions is $2n + \alpha$ with $\alpha$ is unknown. This problem may reduce the comparability between two arbitrary states and lead to unstable performance \cite{2009Zhang}.
+
+In \cite{2012Zhu}, they use a padding method which adds the IDLE action in order to extend the sooner completed states. The IDLE action does not change the current state itself, just to keep the number of actions consistency. However, this method creates the redundancy which may increase the number of actions to $4n$ ($n$ is the length of input sentence) and can only guarantee the local consistency in the beam width. With our system, we the following shift-reduce actions to solve the unary rules problem: 
+\begin{itemize}
+	\item SHIFT: the conventional SHIFT action.
+	\item B-REDUCE-L/R(X): perform the conventional B-REDUCE action.
+	\item SHIFT + U-REDUCE(X) (denoted sh$U(X)$): From the current state $p$, perform the regular shift action creating new state $p_{sh}$. And then perform regular unary reduce action from $p_{sh}$ to create new state $q$ whose $s_0$'s constituent label $X$. In sum, this action returns state $q$ as a newly constructed state. 
+	\item B-REDUCE-L/R(X) + U-REDUCE(Y) (denoted bu$_{L/R}(Y)$): From the current state $p$, perform the regular binary reduce action to create a state $p{b}$ with $s_0$'s constituent label equaling $Y$. After that, perform the unary reduce action from $p_{b}$ to create a new state $q$ with $s_0$'s constituent label $X$. This action also returns state $q$ as a newly constructed state.
+	\item FINISH (denoted $Fin$): the conventional FINISH action.
+\end{itemize}
+
+The deductive system of this modified actions has been shown in figure \ref{deductive_modified}. It is clear that we have removed the unary actions by combining them with shift and binary actions. Therefore, We have only two main types of actions: \textit{shift} or \textit{binary reduce}. This method has two benefits: first, it can guarantee that the number of shift-reduce actions for each possible parse tree will always be $2n$. Second, it does not create any redundant states (such as IDLE) which increase the complexity and sparsity of our model.
+
+\subsection{Dynamic programming}
+\input{Figures/figure_DPSRDeduct}
+\cite{2010Huang} has proposed a method to apply dynamic programming into shift-reduce dependency parsing by using graph structured-stack of \cite{1991Tomita}. The key of their method is to merge the equivalent states. In our system, we have adapted this methods into our constituent parsing with some modification. In order to check the equivalence, each state $d$ has been assigned a signature function denoted $sign(d)$, which is similar to kernel features in \cite{2010Huang}. Two states are equivalent if their signature functions return the same values. For each state, the signature function returns the minimum set of atomic values which is enough to construct the features extracted from referred states. More specifically, with the baseline template in table \ref{baseline feat}, the signature function will return the following set:
+\begin{itemize}
+	\item $s_3.c$ ; $s_2.c$ ; $s_1.c$ ; $s_0.c$
+	\item $s_3.start$ ; $s_2.start$ ; $s_1.start$ ; $s_0.start$ ; $s_0.end$
+	\item $s_3.head$ ; $s_2.head$ ; $s_1.head$ ; $s_0.head$
+	\item $s_1.split$ ; $s_0.split$
+	\item $s_1l.c$ ; $s_1r.c$ ; $s_0l.c$ ; $s_1r.c$
+	\item[]Where $start$,$end$,$head$ are respectively the start,end,head index of referred node. $split$ is the index of the split between left and right child of referred node.
+\end{itemize}
+
+The deductive system of our dynamic programming has been shown as in figure \ref{DPdeductive} which is modified from the deductive system of \cite{2010Huang}. In dynamic programming, we only need to store the values of signature function instead of the entire stack and queue for each state. There are some fundamental definitions in dynamic shift-reduce parsing:
+\begin{itemize}
+	\item Predictor-states $\pi(p)$ are the states which creates $p$ after taking shift actions (both normal and unary shift). It means that every states in $\pi(p)$ can be combined with state $p$ in b-reduce actions as in our deductive system. 
+	\item \textit{Shift-states} are the states caused by shift actions (both normal and unary shift).
+	\item \textit{Binary reduce (b-reduce) states} are the states caused by b-reduce actions (both normal and unary b-reduce).
+	\item Total cost $c$ is the real model score of referred state.
+	\item Inside cost $v$: the Viterbi inside cost of top item ($s_0$) in referred states.
+\end{itemize}
+
+In dynamic shift-reduce process, if there are two equivalent states, they would be merged together and their predictor states would be united. The merged state will take the total and inside cost of the better state.

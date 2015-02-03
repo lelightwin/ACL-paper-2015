@@ -1,0 +1,22 @@
+\section{Experiment}
+	Describes experimental settings:
+	\begin{itemize}
+		\item We use Stanford PoS tagger to produce input for parsing.
+		\item Section 22 for experiments on effectiveness of A* and span features. Section 23 for the final results comparing to the others.
+		\item Configuration of computer which runs the experiments.
+	\end{itemize}
+	\input{Tables/SpeedAndAccuracyComparison1.tex}
+	\input{Figures/SpeedAndAccuracyComparison1.tex}
+\subsection{Speed and Accuracy Comparison}
+	\begin{itemize}
+		\item Comparing search quality between difference A* heuristic on span features. (Figure \ref{devExFig1})
+		\item Comparing search quality between A* parser with beam search parser with different beam size on span features. (Figure \ref{devExFig2})
+		\item Total performance comparison between our A* parser with beam search on span features and Zhang's baseline in both accuracy and speed.
+	\end{itemize}
+	
+	\input{Figures/SpeedAndAccuracyComparison2.tex}
+\subsection{Final Results}
+	The results of final experiment to show that our parser can achieve a state-of-the-art performance with only simplified feature template.
+	\input{Tables/FinalResults.tex}
+		
+	

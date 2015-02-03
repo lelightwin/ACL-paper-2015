@@ -1,0 +1,368 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.4)  3 FEB 2015 08:45
+entering extended mode
+**acl2014.tex
+("D:\Document\My research\paper - 3rd version\acl2014.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(E:\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(E:\MiKTeX\tex\latex\base\size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("D:\Document\My research\paper - 3rd version\acl2014.sty"
+Conference Style for ACL 2014 -- released October 2, 2013
+\titlebox=\skip43
+) (E:\MiKTeX\tex\latex\psnfss\times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (E:\MiKTeX\tex\latex\base\latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+) (E:\MiKTeX\tex\latex\url\url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (E:\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(E:\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(E:\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(E:\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(E:\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(E:\MiKTeX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(E:\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(E:\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("D:\Document\My research\paper - 3rd version\qtree.sty"
+Package: 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+Package: qtree 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+(E:\MiKTeX\tex\latex\pict2e\pict2e.sty
+Package: pict2e 2014/01/12 v0.2z Improved picture commands (HjG,RN,JT)
+ (E:\MiKTeX\tex\latex\00miktex\pict2e.cfg
+File: pict2e.cfg 2005/12/29 v1.0 MiKTeX 'pict2e' configuration
+)
+Package pict2e Info: Driver file: pdftex.def on input line 119.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 121.
+ (E:\MiKTeX\tex\latex\pict2e\p2e-pdftex.def
+File: p2e-pdftex.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks15
+\@arclen=\dimen105
+\@arcrad=\dimen106
+\@tempdimd=\dimen107
+)
+\c@treecount=\count88
+\c@branchcount=\count89
+\parentbox=\box26
+\treebox=\box27
+\treeboxone=\box28
+\treeboxtwo=\box29
+\treeboxthree=\box30
+\treeboxfour=\box31
+\treeboxfive=\box32
+\treeboxsix=\box33
+\treeboxseven=\box34
+\treeboxeight=\box35
+\treeboxnine=\box36
+\treeboxten=\box37
+\treeboxeleven=\box38
+\treeboxtwelve=\box39
+\treeboxthirteen=\box40
+\treeboxfourteen=\box41
+\treeboxfifteen=\box42
+\treeboxsixteen=\box43
+\treeboxseventeen=\box44
+\treeboxeighteen=\box45
+\treeboxnineteen=\box46
+\treeboxtwenty=\box47
+\treeoffsetone=\skip44
+\treeoffsettwo=\skip45
+\treeoffsetthree=\skip46
+\treeoffsetfour=\skip47
+\treeoffsetfive=\skip48
+\treeoffsetsix=\skip49
+\treeoffsetseven=\skip50
+\treeoffseteight=\skip51
+\treeoffsetnine=\skip52
+\treeoffsetten=\skip53
+\treeoffseteleven=\skip54
+\treeoffsettwelve=\skip55
+\treeoffsetthirteen=\skip56
+\treeoffsetfourteen=\skip57
+\treeoffsetfifteen=\skip58
+\treeoffsetsixteen=\skip59
+\treeoffsetseventeen=\skip60
+\treeoffseteighteen=\skip61
+\treeoffsetnineteen=\skip62
+\treeoffsettwenty=\skip63
+\treeshiftone=\skip64
+\treeshifttwo=\skip65
+\treeshiftthree=\skip66
+\treeshiftfour=\skip67
+\treeshiftfive=\skip68
+\treeshiftsix=\skip69
+\treeshiftseven=\skip70
+\treeshifteight=\skip71
+\treeshiftnine=\skip72
+\treeshiftten=\skip73
+\treeshifteleven=\skip74
+\treeshifttwelve=\skip75
+\treeshiftthirteen=\skip76
+\treeshiftfourteen=\skip77
+\treeshiftfifteen=\skip78
+\treeshiftsixteen=\skip79
+\treeshiftseventeen=\skip80
+\treeshifteighteen=\skip81
+\treeshiftnineteen=\skip82
+\treeshifttwenty=\skip83
+\treewidthone=\skip84
+\treewidthtwo=\skip85
+\treewidththree=\skip86
+\treewidthfour=\skip87
+\treewidthfive=\skip88
+\treewidthsix=\skip89
+\treewidthseven=\skip90
+\treewidtheight=\skip91
+\treewidthnine=\skip92
+\treewidthten=\skip93
+\treewidtheleven=\skip94
+\treewidthtwelve=\skip95
+\treewidththirteen=\skip96
+\treewidthfourteen=\skip97
+\treewidthfifteen=\skip98
+\treewidthsixteen=\skip99
+\treewidthseventeen=\skip100
+\treewidtheighteen=\skip101
+\treewidthnineteen=\skip102
+\treewidthtwenty=\skip103
+\daughteroffsetone=\skip104
+\daughteroffsettwo=\skip105
+\daughteroffsetthree=\skip106
+\daughteroffsetfour=\skip107
+\branchwidthone=\skip108
+\branchwidthtwo=\skip109
+\branchwidththree=\skip110
+\branchwidthfour=\skip111
+\parentoffset=\skip112
+\treeoffset=\skip113
+\daughteroffset=\skip114
+\branchwidth=\skip115
+\parentwidth=\skip116
+\treewidth=\skip117
+\qta=\toks16
+\qtb=\toks17
+\nbranches=\count90
+\qroofx=\count91
+\qroofy=\count92
+\@qrscratchbox=\box48
+)
+(E:\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen108
+)
+("D:\Document\My research\paper - 3rd version\acl2014.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 51.
+
+(E:\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(E:\MiKTeX\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count93
+\scratchdimen=\dimen109
+\scratchbox=\box49
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count96
+\MPscratchDim=\dimen110
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
+\everyMPtoPDFconversion=\toks19
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 52.
+ (E:\MiKTeX\tex\latex\base\ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 52.
+ (E:\MiKTeX\tex\latex\psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+("D:\Document\My research\paper - 3rd version\abstract.tex"
+Underfull \hbox (badness 2096) in paragraph at lines 2--3
+[]\OT1/ptm/m/n/10.95 The ap-proach of global dis-crim-i-na-tive
+ []
+
+) ("D:\Document\My research\paper - 3rd version\Section1.tex"
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 3.
+
+(E:\MiKTeX\tex\latex\psnfss\omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
+
+Underfull \hbox (badness 1237) in paragraph at lines 5--6
+\OT1/ptm/m/n/10.95 sys-tem are ei-ther lo-cal model or in-ex-act
+ []
+
+) ("D:\Document\My research\paper - 3rd version\Section2.tex"
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 10.
+
+Underfull \hbox (badness 1946) in paragraph at lines 13--14
+\OT1/ptm/m/n/10.95 with av-er-age struc-tured per-cep-tron as in
+ []
+
+) ("D:\Document\My research\paper - 3rd version\Section3.tex" [1{C:/Users/lelig
+htwin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+[]\OT1/ptm/m/n/10.95 SHIFT[]UNARY(X): in case of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+\OT1/ptm/m/n/10.95 X=NULL, this is a con-ven-tional
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 8--9
+\OT1/ptm/m/n/10.95 X=NULL, this is a con-ven-tional B-
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 14--15
+\OT1/ptm/m/n/10.95 for us-ing unary merg-ing ac-tions or
+ []
+
+) ("D:\Document\My research\paper - 3rd version\Section4.tex"
+Underfull \hbox (badness 1983) in paragraph at lines 11--12
+[]\OT1/ptm/m/n/10.95 Present the \OT1/ptm/m/it/10.95 gram-mar pro-jec-tion \OT1
+/ptm/m/n/10.95 heuris-tic
+ []
+
+) ("D:\Document\My research\paper - 3rd version\Section5.tex"
+("D:\Document\My research\paper - 3rd version\Tables/SpeedAndAccuracyComparison
+1.tex")
+("D:\Document\My research\paper - 3rd version\Figures/SpeedAndAccuracyCompariso
+n1.tex"
+<Figures/SpeedAndAccuracyComparison1.png, id=10, 648.17157pt x 497.60907pt>
+File: Figures/SpeedAndAccuracyComparison1.png Graphic file (type png)
+
+<use Figures/SpeedAndAccuracyComparison1.png>
+Package pdftex.def Info: Figures/SpeedAndAccuracyComparison1.png used on input 
+line 3.
+(pdftex.def)             Requested size: 226.86345pt x 174.16577pt.
+
+Overfull \hbox (7.77733pt too wide) in paragraph at lines 3--4
+ [] 
+ []
+
+) [2]
+("D:\Document\My research\paper - 3rd version\Figures/SpeedAndAccuracyCompariso
+n2.tex"
+<Figures/SpeedAndAccuracyComparison2.png, id=18, 608.2725pt x 487.8225pt>
+File: Figures/SpeedAndAccuracyComparison2.png Graphic file (type png)
+
+<use Figures/SpeedAndAccuracyComparison2.png>
+Package pdftex.def Info: Figures/SpeedAndAccuracyComparison2.png used on input 
+line 3.
+(pdftex.def)             Requested size: 212.89856pt x 170.74043pt.
+)
+("D:\Document\My research\paper - 3rd version\Tables/FinalResults.tex"))
+("D:\Document\My research\paper - 3rd version\Section6.tex")
+("D:\Document\My research\paper - 3rd version\Section7.tex" [3 <D:/Document/My 
+research/paper - 3rd version/Figures/SpeedAndAccuracyComparison1.png> <D:/Docum
+ent/My research/paper - 3rd version/Figures/SpeedAndAccuracyComparison2.png>])
+("D:\Document\My research\paper - 3rd version\acl2014.bbl") [4]
+("D:\Document\My research\paper - 3rd version\acl2014.aux") ) 
+Here is how much of TeX's memory you used:
+ 1766 strings out of 493921
+ 24222 string characters out of 3154485
+ 88613 words of memory out of 3000000
+ 5008 multiletter control sequences out of 15000+200000
+ 20632 words of font info for 48 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,15n,19p,1006b,354s stack positions out of 5000i,500n,10000p,200000b,50000s
+{E:/MiKTeX/fonts/e
+nc/dvips/fontname/8r.enc}<E:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+E:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><E:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E
+:/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><E:/MiKTeX/fonts/type1/urw/times/ut
+mb8a.pfb><E:/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><E:/MiKTeX/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on acl2014.pdf (4 pages, 168661 bytes).
+PDF statistics:
+ 52 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+

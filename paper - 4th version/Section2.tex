@@ -1,0 +1,28 @@
+\section {Background}
+	Summarizing the basic ideas of previous works here.
+\subsection{Shift-reduce parsing}
+	\begin{itemize}
+		\item The structure of baseline shift-reduce parsing (stack, queue, state items...)
+		\item The four conventional shift-reduce actions (for both constituent parser and dependency parser):
+		\begin{itemize}
+			\item SHIFT.
+			\item U-REDUCE(X): In dependency parsing, we do not have this one.
+			\item B-REDUCE$_L$(X): In dependency parsing, we have only one "X" in grammar.
+			\item B-REDUCE$_R$(X).
+		\end{itemize}
+		\item The process of training shift-reduce parser with average structured perceptron as in \cite{2004Collins}.
+	\end{itemize}
+\subsection{Models of Shift-Reduce Parsing}	
+	\begin{itemize}
+		\item present the structured perceptron model as global training for Shift-Reduce Parsing.
+		\item present the Maxent model as local training for Shift-Reduce Parsing.
+	\end{itemize}
+\subsection{Best-first parsing}
+	\begin{itemize}
+		\item The best-first shift-reduce parser of \cite{2006Sagae} which was locally trained by Maxent model, it did not use dynamic programing.
+		\item The best-first shift-reduce parser of \cite{2013Zhao}: also trained by Maxent, but using dynamic programing with lazy expansion technical to improve decoding speed.
+	\end{itemize}
+\subsection{A* parsing}
+	\begin{itemize}
+		\item Give some briefly introduction on A* parsing.
+	\end{itemize}

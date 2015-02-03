@@ -1,0 +1,54 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Collins and Roark}2004]{2004Collins}
+Michael Collins and Brian Roark.
+\newblock 2004.
+\newblock Incremental parsing with the perceptron algorithm.
+\newblock In {\em Proceedings of ACL}, Stroudsburg, PA, USA.
+
+\bibitem[\protect\citename{Hall \bgroup et al.\egroup }2014]{2014David}
+David Hall, Greg Durrett, and Dan Klein.
+\newblock 2014.
+\newblock Less grammar, more features.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics}, pages 228--337, Baltimore, Maryland.
+
+\bibitem[\protect\citename{Huang and Sagae}2010]{2010Huang}
+Liang Huang and Kenji Sagae.
+\newblock 2010.
+\newblock Dynamic programming for linear-time incremental parsing.
+\newblock In {\em Proceedings of ACL 2010}.
+
+\bibitem[\protect\citename{Klein and Manning}2003a]{2003DanNAACL}
+Dan Klein and Chris Manning.
+\newblock 2003a.
+\newblock A* parsing: Fast exact viterbi parse selection.
+\newblock In {\em Proceedings of HLT-NAACL}.
+
+\bibitem[\protect\citename{Klein and Manning}2003b]{2003DanACL}
+Dan Klein and Chris Manning.
+\newblock 2003b.
+\newblock Accurate unlexicalized parsing.
+\newblock In {\em Proceedings of ACL}.
+
+\bibitem[\protect\citename{Sagae and Alon}2006]{2006Sagae}
+Kenji Sagae and Lavie Alon.
+\newblock 2006.
+\newblock A best-first probabilistic shift-reduce parser.
+\newblock In {\em Proceedings of the COLING/ACL}, pages 691--698.
+
+\bibitem[\protect\citename{Zhao \bgroup et al.\egroup }2013]{2013Zhao}
+Kai Zhao, Jame Cross, and Liang Huang.
+\newblock 2013.
+\newblock Optimal incremental parsing via best-first dynamic programming.
+\newblock In {\em Proceedings of EMNLP 2013}.
+
+\bibitem[\protect\citename{Zhu \bgroup et al.\egroup }2012]{2012Zhu}
+Muhua Zhu, Yue Zhang, Wenliang Chen, Min Zhang, and Jingbo Zhu.
+\newblock 2012.
+\newblock Fast and accurate shift-reduce constituent parsing.
+\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 434--443, Sofia,
+  Bulgaria, August. Association for Computational Linguistics.
+
+\end{thebibliography}

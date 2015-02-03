@@ -1,0 +1,55 @@
+\section{The influence of feature templates on time complexity}
+In shift-reduce parsing, it is very important to evaluate the 
+
+In shift-reduce parsing, the search space will be very large depending on the feature templates we used. Therefore, in this section, we would like to make some evaluation about the time complexity of feature templates and then design a feature template used for exact search in shift-reduce constituent parsing.
+
+\subsection{Evaluation from the baseline feature template}
+
+To evaluate the time complexity of shift-reduce parsing system applying this feature template, we will reply on the observation that the baseline feature has focused on top four nodes in stack $S$ (table \ref{baseline comp}). With each node, we could consider the parsing process as a CYK process. As we know, dynamic algorithm such as CYK can parse an input sentence within $O(n^3.|G|)$ (cubic time) with unlexicalized case and $O(n^5.|G|)$ with lexicalized case. The table \ref{baseline subcomp} has shown that the baseline feature template uses head word as one of its components, so this is the lexicalized case. Therefore, with the combination of four nodes in the lexicalized case, the parsing system which applies the baseline feature must take a very large time complexity about $O((n^5.|G|)^4)=O(n^{20}.|G|^4)$ in the worst case. In general form, if the feature template focuses on top $k$ nodes in stack $S$, then we will have the time complexity $O((n^5*|G|)^k)$ with lexicalized parsing and $O((n^3*|G|)^k)$ with unlexicalized parsing.
+
+Following the result published in \cite{2013Zhao}, the exact search will be possible to perform if we can reduce the time complexity to $O(n^6)$. Comparing this complexity to the general form of time complexity in shift-reduce parsing: $O((n^5*|G|)^k)$ (lexicalized) and $O((n^3*|G|)^k)$ (unlexicalized), we will have $k=1$ (lexicalized) or $k=2$ (unlexicalized). It means that we have two directions to create our own feature template:
+
+\begin{itemize}
+	\item $k=1(lexicalized)$: designing a feature template which focuses only on top node in stack $S$ which can use the head word features.
+	\item $k=2(unlexicalized)$: designing a feature template which focuses on top two nodes in stack $S$ without the head word features.
+\end{itemize}
+
+\subsection{Our simplified feature template}
+As we concluded in the previous section, we will have two strategies of creating a feature template for exact search. With the first approach, the feature template will be so small and lack of information so we created our own feature template based on the second one. \\
+\indent With the second one, the only problem is the lack of head lexical information. Fortunately, there are many studies on unlexicalized constituent parsing which give high parsing accuracy. \cite{2003DanACL} proposed their first research on unlexicalized parsing. This is a theoretically splitting constituent method which can reach 85.77\% F-score. \cite{2007petrov} has proposed out an extension of \cite{2003DanACL} method which splits the grammar automatically to exploit the latent variables and attain the F-score equaling 90.7\%.
+
+As in our system, we have designed a feature template which was inspired by the span features in \cite{2014David}. This is a very simple feature set which relied only on the local features within the span of a node and achieve an amazing performance. In the experiment reported in \cite{2014David}, it  has reached an F-score = 89.9\% and outperformed Berkeley parser in terms of parsing many different languages. The span features from this article include the following components for a constituent node (table \ref{simplified subcomp}):
+\begin{itemize}
+	\item The first and last word of the span of node.
+	\item the length of the span of node
+	\item The shape of word sequence within the span of node (illustrated in figure \ref{spanFeature}):
+	\begin{itemize}
+		\item[\textbf{X}]: if the current word's first letter is capital letter.
+		\item[\textbf{x}]: if the current word is normal word.
+		\item[\textbf{N}]: if the current word is a number.
+		\item[\textbf{\_}]: special character such as [' " , .] is kept.
+		\item[\textbf{O}]: the other cases.
+	\end{itemize}
+\end{itemize}
+
+\begin{table}
+	\caption{\label{simplified subcomp} The sub-components which are used in our simplified feature template}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline 
+			component & explanation \\ 
+			\hline
+			$X.ft$ &  The first PoS in X's span \\
+			$X.fw$ &  The first word in X's span \\
+			$X.lt$ &  the last PoS in X's span \\
+			$X.lw$ &  the last word in X's span \\
+			$X.len$ &  The length of X's span \\
+			$X.shape$ &  The shape of X's span \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Our simplified feature template has been shown in table \ref{simplified feat}. It has focused only on two top nodes in stack $S$($s_0$ and $s_1$) and did not use the head lexical information. Therefore, based on our previous analysis, the time complexity of this feature template will be $O(n^6*|G|^2)$. You can see the illustration of comparison between the baseline and simplified feature template in \ref{featComparison}.
+
+\input{Tables/simplified_feature}

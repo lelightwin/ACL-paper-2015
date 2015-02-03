@@ -1,0 +1,42 @@
+\begin{figure*}
+	\begin{center}
+		\begin{tabular}{c c}
+			state form & $l:\langle i, j, s_d...s_0\rangle:(c,v,\pi)$ \ \ \ \ \ \ \ $l$: step; $c,v$: total and inside costs; $\pi$: predictor states\\ [5pt]
+			equivalence & $state1 = state2$ \ \ \ 
+											iff. $sign(state1) \equiv sign(state2)$\\[5pt]
+			ordering & $state1 < state2$ \ \ \ iff. $(state1.c < state2.c)$ or $(state1.c=state2.c$\ \ and \ \ $state1.v < state2.v)$\\[5pt]
+			\hline
+			axiom($p_0$) & $0:\langle 0,0,\epsilon\rangle:(0,0,\emptyset)$\\[5pt]
+			
+			sh & 
+			$\displaystyle \frac{\stackrel{state \ r}{l:\langle \_ , j , s_d...s_0 \rangle : (c,\_,\_)}}
+			{l+1: \langle j , j+1, s_{d-1}...s_0,w_j \rangle:(c+\xi(r),0,\{p\})}
+			\ \ \ j<n$
+			
+			\\[20pt]
+			
+			sh$U(Y)$ & 
+			$\displaystyle \frac{\stackrel{state \ r}{l:\langle \_ , j , s_d...s_0 \rangle : (c,\_,\_)}}
+			{l+1: \langle j , j+1, s_{d-1}...s_0,\Tree[.Y $w_j$ ] \rangle:(c+\xi_u(r),0,\{p\})}
+			\ \ \ j<n$
+			
+			\\[20pt]
+			
+			b$_{L/R}$(X) &
+			$\displaystyle \frac{\stackrel{state \ p}{\_:\langle k , i , s_{d+1}...s_1 \rangle : (c',v',\pi')} \ \ \ \ \ \ \ \ \ \ \ \stackrel{state \ q}{l:\langle i, j , s_{d}...s_0 \rangle : (c,v,\pi)}}
+			{l+1: \langle k , j, s_{d+1}...s_2, \Tree [.X $s_1$ $s_0$ ] \rangle:(c'+v+\delta,v'+v+\delta,\pi)}
+			\ \ \ p \in \pi$
+			\\[40pt]
+			
+			bu$_{L/R}$(Y) &
+			$\displaystyle \frac{\stackrel{state \ p}{\_:\langle k , i , s_{d+1}...s_1 \rangle : (c',v',\pi')} \ \ \ \ \ \ \ \ \ \ \ \stackrel{state \ q}{l:\langle i, j , s_{d}...s_0 \rangle : (c,v,\pi)}}
+			{l+1: \langle k , j, s_{d+1}...s_2, \Tree [.Y [.X $s_1$ $s_0$ ] ] \rangle:(c'+v+\delta_u,v'+v+\delta_u,\pi)}
+			\ \ \ p \in \pi$
+			\\[65pt]
+			
+			goal & $2n-1:\langle 0,n,s_d...s_0 \rangle : (c,c,\{p_0\})$\\[5pt]			
+		\end{tabular}
+	\end{center}
+	where $\xi=w \cdot \Phi_{sh}$; \ \ \ $\xi_u = w \cdot \Phi_{shU(Y)}$; \ \ \ $\delta=\xi'(p)+\lambda$; \ \ \ $\delta_u=\xi'(p)+\lambda_u$; \ \ \ $\xi'$ = $\xi(p)$ or $\xi_u(p)$; \ \ \ $\lambda=w \cdot \Phi_{b_{L/R}(X)}(q)$; \ \ \ $\lambda_u = w \cdot \Phi_{bu_{L/R}(X)}(q)$.
+	\caption{\label{DPdeductive}The deductive system for our dynamic programming based on \cite{2010Huang} system. Each state will have: $\langle i,j\rangle$ as the start and end index, and $s_d...s_0$ as the top-d items in stack.}
+\end{figure*}

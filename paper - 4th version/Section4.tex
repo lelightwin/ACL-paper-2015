@@ -1,0 +1,13 @@
+\section{Extended Architecture}
+	The goal of this section is to build a parser balancing the model's expressiveness and tractable runtime. Our strategy is changing features to exploit from very different parts from other SR parsers and improving search.
+\subsection{Span Features}
+	\begin{itemize}
+		\item Discuss the time complexity problem in feature template, we need a simplified features which can guarantee the effectiveness without increasing the complexity.
+		\item Present the span features from \cite{2014David}, which focused on span information within a non-terminal node.
+	\end{itemize}
+\subsection{A* search}
+	\begin{itemize}
+		\item Present the \textit{grammar projection} heuristic which is adapted from \cite{2003DanACL}. Concerning about the \textit{context summarization}, it cannot be used in incremental parsing, so we ignore it. The idea of how we can use \textit{context summarization} will be the future research.
+		\item Present the \textit{reduced constituent} heuristic: this is our proposed heuristics for shift-reduce design. The key is to reduce the original space into small space with lesser constituents. This one is an efficient heuristic for A* search. The only problem is that it takes time to calculate.
+		\item Present the hierarchical A* heuristic which combined \textit{grammar projection} with \textit{reduced constituent}.
+	\end{itemize}

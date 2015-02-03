@@ -1,0 +1,59 @@
+\section {Our baseline Shift-Reduce parser} 
+In order to achieve our goal, we built a baseline parser which is adapted from \cite{ref:2012Zhu}. Our baseline parsing system follows the shift-reduce process of (Sagae, 2005) and use structured perceptron to obtain the global discriminative training.
+\subsection{Shift-Reduce Constituent Parsing}
+Shift-reduce parsing can be considered as a state transition system, which means that it includes a set of states and actions. From a current state, each action will create a new corresponding state. A state consists of two data structures: a stack \textit{S} of constructed phrases and a queue \textit{Q} of remain tagged words in the input sentence. Whereas a set of actions in the shift-reduce parsing process includes:
+\begin{itemize}
+	\item SHIFT: pop the front word from \textit{Q} and push it onto \textit{S}
+	\item B-REDUCE-L/R(X): pop the two top nodes from \textit{S} and use the binary rule set to combine them into new constituent node with label X, and push X onto \textit{S}. L means that head of X is its left child, and vice versa with R.
+	\item U-REDUCE(X): pop the top constituent off \textit{S}, use the unary rule set to combine them into new constituent node with label X, and push X onto \textit{S}.
+	\item FINISH: pop the root node (Sentence) off \textit{S} and end the shift-reduce parsing.
+\end{itemize}
+
+The parsing process begins with a start state: empty stack and queue of input tagged sentence and go through a sequence of shift-reduce actions until it perform the FINISH action and reach the final state: an empty stack and an empty queue. Each shift-reduce action has been assigned a score causing that the score of each final state will be sum of the score of all its sequence states. The parsing system will select the parse tree corresponding to the final state with highest accumulative score.
+
+\subsection{Average perceptron training}
+As we mentioned above, we used the averaged perceptron algorithm adapted from \cite{ref:2004Collins} to train our model as in \cite{ref:2012Zhu}. For a given input sentence $x$, the initial state has an empty stack and a queue that contains all the input words from the sentence. An beam search strategy will be used to find the candidate final state. Specifically, an agenda is used to keep the k-best states in terms of accumulative score at each step. At initialization, the agenda contains only the initial state. At each step, every states in the agenda are popped out and create a set of new states by applying the shift-reduce actions, and the top k from the newly constructed states are put back onto the agenda. The process repeats until the agenda is empty, and the final state with highest score $F(x)$ is selected as the output. We can call it as a beam search decoder.
+\begin{equation}
+	F(x) = arg\max_{s \in Beam(x)} Score(s)
+\end{equation}
+
+Here $Beam(x)$ is the set of states existed in the beam width of the decoder. The score of a state $s$ is the total score of the shift-reduce actions that have been applied to build the state:
+\begin{equation}
+	Score(s) = \sum_{i = 0}^{N} \Phi(a_i).\vec{w}
+\end{equation}
+
+\begin{table*}[t]
+	\begin{center}
+		\caption{\label{perceptron} Averaged perceptron algorithm}
+		
+		\begin{tabular}{|l|l|}
+			\hline
+			\bf Inputs & Training examples ($x_i,y_i$) \\
+			\bf Initialization & $\vec{w}$ = 0 \\
+			\bf Output & averaged weights $\vec{w}$ \\
+			\hline
+			\bf Algorithm 	& For $t = 1 ...T, i = 1 ...n$ \\
+			& --- Calculate $F(x_i) = argmax_{y \in Beam(x_i)}Score(y)$ \\
+			& --- If $(F(x_i) \neq y_i)$ then $\vec{w} = \vec{w} + \Phi(y_i) - \Phi(z_i)$ \\
+			\hline							
+		\end{tabular}
+	\end{center}
+\end{table*}
+
+Here $\Phi(a_i)$ represents the feature vector for the $i^{th}$ action $a_i$ in state $s$. It is computed by applying the feature templates into the context of $a_i$. N is the total number of actions in $s$.
+The parser will go through all the example pairs of sentences and golden final states $(x_i, y_i)$ from the training corpus and use the beam search decoder to produce the candidate $F(x_i)$ and update the weights $\vec{w}$ if $F(x_i)$ does not match with $y_i$. The pseudo-code for average perceptron training is shown as in Table \ref{perceptron}
+
+\subsection{Our modified shift-reduce actions}
+One of the bottle-neck in shift-reduce constituent is the unary rules problem. Because of these unary rules, the parse trees for the same sentence can have a different numbers of nodes which leads to different numbers of shift-reduce actions. This is an important problem to solve because the inconsistency in the number of shift-reduce actions can make the may lead to inconsistency performance. In \cite{ref:2012Zhu}, they use a padding method which adds the IDLE action in order to extend the sooner completed states. The IDLE action does not change the current state itself, just to keep the number of actions consistency. However, this method creates the redundancy which may increase the number of actions to $4n$ ($n$ is the length of input sentence) and can only guarantee the local consistency in the beam width. With our system, we the following shift-reduce actions to solve the unary rules problem: 
+\begin{itemize}
+	\item SHIFT: perform the regular shift action.
+	\item SHIFT\&U-REDUCE(X): From the current state $A$, perform the regular shift action creating new state $B$. And then perform regular unary reduce action to create new state $C$ with new constituent label $X$. This action returns state $C$.
+	\item B-REDUCE(Y): Perform the regular binary reduce action to form the state with new constituent label $Y$.
+	\item B-REDUCE(Y)\&U-REDUCE(X): From the current state $A$, perform the regular binary reduce action to create a state $B$ with constituent label $Y$. After that, perform the unary reduce action from $B$ to create a new state $C$ with new constituent label $X$. This action returns state $C$, too.
+	\item FINISH: perform the regular finish action.
+\end{itemize}
+
+It is clear to see that we had combine the unary reduce actions with shift and binary reduce actions. It means that there is no unary actions anymore and we have only two main types of actions: \textit{shift} or \textit{binary reduce}. This method has two benefits: first, it can guarantee the global consistency, means that the number of shift-reduce actions for each parse tree will always be $2n$. Second, it does not create any redundant states which make the model become sparser. With the number of actions equaling $2n$, the constituent parsing nearly reduces to dependency parsing.
+
+\subsection{Dynamic programming}
+In order to achieve the exactness in parsing, dynamic programming is clearly an important problem to exploit the full space of candidates with the time complexity which is within polynomial limitation. \cite{ref:2010Huang} has proposed the way of using dynamic algorithm into shift-reduce dependency parsing which is based on the graph-structured stack  of \cite{ref:1991Tomita} and the classical CYK algorithm. The key of their approach is to merge the shift states (states after shift action) and b-reduce states (states after binary reduce action) together if they are similar. However, due to the unary actions in constituent parsing, the dynamic programming is difficult to implement because the unary states could not be merged with shift states or b-reduce states. Fortunately, with our modified shift-reduce actions, the unary states are not existed which causes the dynamic programming to be easy to implement.

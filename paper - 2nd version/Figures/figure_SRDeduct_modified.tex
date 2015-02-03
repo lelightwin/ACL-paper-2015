@@ -1,0 +1,49 @@
+\begin{figure}[t]
+		\begin{tabular}{c c}
+		input: & $w_0...w_{n-1}$\\[5pt]
+		axiom & $0:\langle0,\epsilon\rangle:0$\\[5pt]
+		sh &	
+		$\displaystyle \frac{l:\langle j,S\rangle:c}
+		{l+1:\langle j+1, S|w_j\rangle:c+\xi}$
+		\\[10pt]
+
+		sh$U(Y)$ &	
+			$\displaystyle \frac{l:\langle j,S\rangle:c}
+			{l+1:\langle j+1, S|Y(w_j)\rangle:c+\xi_u}$
+		\\[10pt]
+	
+		b$_L(X)$ & 
+			$\displaystyle \frac{l:\langle j,S|s_1|s_0\rangle:c} 
+			{l+1:\langle j, S|X(s_1)\rangle:c+\lambda_L}$					
+		\\[10pt]
+		
+		b$_R(X)$ & 
+			$\displaystyle \frac{l:\langle j,S|s_1|s_0\rangle:c}
+			{l+1:\langle j, S|X(s_0)\rangle:c+\lambda_R}$
+		\\[10pt]
+	
+		bu$_L(Y)$ & 
+			$\displaystyle \frac{l:\langle j,S|s_1|s_0\rangle:c}
+			{l+1:\langle j, S|Y(s_1)\rangle:c+\lambda_{LU}}$
+		\\[10pt]
+		
+		bu$_L(Y)$ & 
+			$\displaystyle \frac{l:\langle j,S|s_1|s_0\rangle:c}
+			{l+1:\langle j, S|Y(s_0)\rangle:c+\lambda_{RU}}$
+		\\[10pt]
+		
+		$Fin$ & 
+			$\displaystyle \frac{2n-1:\langle n,s_0\rangle:c}
+			{2n:\langle n, \emptyset \rangle:c+\rho}$
+		\\[10pt]
+		\end{tabular}
+	
+		where $\xi_u$, $\lambda_{LU}$, $\lambda_{RU}$ are respectively the shift-unary cost, left binary-unary  cost, right binary-unary cost, unary cost.
+		\\
+		\begin{equation}		\xi_u = w \cdot \Phi_{shU(Y)}(j,S) 	\end{equation}
+		\begin{equation}		\lambda_{LU} = w \cdot \Phi_{bu_L(Y)}(j,S) 	\end{equation}
+		\begin{equation}		\lambda_{RU} = w \cdot \Phi_{bu_R(Y)}(j,S) 	\end{equation}
+		\begin{equation}		\rho = w \cdot \Phi_{Fin}(2n-1,s_0) 	\end{equation}
+		
+	\caption{\label{deductive_modified}Deductive system for our modified shift-reduce constituent parser.}
+\end{figure}

@@ -1,0 +1,25 @@
+\begin{table*}[t]
+	\caption{\label{baseline feat} A table of baseline feature template}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline 
+			Description & Templates  \\ 
+			\hline
+			1-grams 	& $s_0.t+s_0.c$   ;   $s_0.w+s_0.c$ ; $s_1.t+s_1.c$   ;   $s_1.w+s_1.c$ \\
+			& $s_2.t+s_2.c$   ;   $s_2.w+s_2.c$   ;   $s_3.t+s_3.c$   ;   $s_3.w+s_3.c$ \\
+			& $q_0.w+q_0.t$   ;   $q_1.w+q_1.c$   ;   $q_2.w+q_2.t$   ;   $q_3.w+q_3.c$ \\
+			
+			& $s_0l.w+s_0l.c$   ;   $s_0u.w+s_0u.c$   ;   $s_0r.w+s_0r.c$ \\
+			& $s_1l.w+s_1l.c$   ;   $s_1u.w+s_1u.c$   ;   $s_1r.w+s_1r.c$ \\
+			\hline
+			2-grams 	& $s_0.w+s_1.w$   ;   $s_0.w+s_1.c$   ;   $s_0.c+s_1.w$   ;   $s_0.c+s_1.c$ \\
+			& $s_0.w+q_0.w$   ;   $s_0.w+q_0.t$   ;   $s_0.c+q_0.w$   ;   $s_0.c+q_0.t$ \\
+			& $q_0.w+q_1.w$   ;   $q_0.w+q_1.t$   ;   $q_0.t+q_1.w$   ;   $q_0.t+q_1.t$ \\
+			& $s_1.w+q_0.w$   ;   $s_1.w+q_0.t$   ;   $s_1.c+q_0.w$   ;   $s_1.c+q_0.t$ \\
+			\hline
+			3-grams 	& $s_0.c+s_1.c+s_2.c$   ;   $s_0.w+s_1.c+s_2.c$ ; $s_0.c+s_1.w+s_2.c$   ;   $s_0.c+s_1.c+s_2.w$ \\
+			& $s_0.c+s_1.c+q_0.t$   ;   $s_0.w+s_1.c+q_0.t$   ;   $s_0.c+s_1.w+q_0.t$   ;   $s_0.c+s_1.c+q_0.w$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table*}

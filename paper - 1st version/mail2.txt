@@ -1,0 +1,20 @@
+> Thank you for this advice, I will follow it. Actually, The first target of our conventional shift-reduce actions is to solve the problem of merging unary states with binary states and shift states (dependency parsing has no unary states in my understanding). But after that, it has so many additional affect: a better padding method, solve the negative score problem. Therefore, in my opinion, the target of this technical which we should emphasize is to remove redundant unary actions.
+
+Maybe I don't understand this point. Is it true that naive method (without padding or unary merging) cannot be used when extending Liang Huang's DP into constituency parsing? If so, it is important to first point out this, and then discuss how to solve it.
+
+>>I'm not sure whether the theory presented in this section is correct. In my understanding, one of Zhao's work is reducing time complexity of arc-factored model from O(n^7) of Liang Huang to O(n^6) by removing dependencies to step number (Is it correct?; I'm wondering whether this technique is also applicable to Liang Huang's beam search parser). This complexity comes from three span indices and three head indices. The current parser use graph-structured stuck so I think the complexity is slightly different from the result of naive CKY parser. I may miss something.
+> Actually, the source code of this parser has not been published so it is very difficult to confirm its performance but I think it could be apply into Liang Huang system because in the last section they have said that their method also could be applied into global model like structured perceptron. I also remember that Miyao-san has suggested me about the eisner algorithm which can reduce the time complexity of dependency parsing down to cubic time.
+
+
+What I want to say is that the currently presented theory of time complexity is slightly weak. Can you present a deductive system like Figure 4 on Liang Huang's paper? We may discuss what happen for the time complexity intuitively with such figures. I think the important point is whether your parser's state has the step number. If this is required, I think it increase the time complexity. I don't know Eisner's technique can be applied here, but it would require some effort.
+
+> Of course I have the DP system now. Actually, I want to do the experiments with DP beam search on server, too. But the server on that time was too busy and I think testing with non-DP is ok. Now if we want to make experiment with DP system, we will make it with beam size = 16, 32, 64? I will make it now, hope that it will be completed before the deadline.
+
+I think you can use any servers, many of which are not working now. But be care about the server shutdown that Hoshino-san announced. We may consult if it is problematic.
+
+It is better to clarify the motivation for a new experiment. What is revealed from the current experiments is beam search parser causes many parse errors and exact search is important. Though it cannot use rich context as Yue Zhang' s baseline, empirically this system is strong. I think one assumption behind this experiment is that DP shift reduce parser is not efficient when increasing the number of kernel features and empirically beam search with rich features is more strong. Maybe you have to say this point. Or the supplemental experiment would be one to confirm this assumption by showing scores of DP-parser for both BF and SF. But I think it would rather be redundant.
+
+
+Best,
+
+Hiroshi

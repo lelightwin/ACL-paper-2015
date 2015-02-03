@@ -1,0 +1,74 @@
+\begin{thebibliography}{}
+
+\bibitem[Dan and Christopher, 2003a]{2003DanNAACL}
+Dan, K. and Christopher, D. (2003a).
+\newblock A* parsing: Fast exact viterbi parse selection.
+\newblock In {\em Proceedings of HLT-NAACL}.
+
+\bibitem[Dan and Christopher, 2003b]{2003DanACL}
+Dan, K. and Christopher, D. (2003b).
+\newblock Accurate unlexicalized parsing.
+\newblock In {\em Proceedings of ACL}.
+
+\bibitem[David et~al., 2014]{2014David}
+David, H., Greg, D., and Dan, K. (2014).
+\newblock Less grammar, more features.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics}, pages 228--337, Baltimore, Maryland.
+
+\bibitem[Kai et~al., 2013]{2013Zhao}
+Kai, Z., Jame, C., and Liang, H. (2013).
+\newblock Optimal incremental parsing via best-first dynamic programming.
+\newblock In {\em Proceedings of EMNLP 2013}.
+
+\bibitem[Kenji and Alon, 2006]{2006Sagae}
+Kenji, S. and Alon, L. (2006).
+\newblock A best-first probabilistic shift-reduce parser.
+\newblock In {\em Proceedings of the COLING/ACL}, pages 691--698.
+
+\bibitem[Liang and Kenji, 2010]{2010Huang}
+Liang, H. and Kenji, S. (2010).
+\newblock Dynamic programming for linear-time incremental parsing.
+\newblock In {\em Proceedings of ACL 2010}.
+
+\bibitem[Masaru, 1991]{1991Tomita}
+Masaru, T. (1991).
+\newblock Generalized lr parsing.
+\newblock Kluwer Academic.
+
+\bibitem[Mengqiu and Teruko, 2006]{2006Wang}
+Mengqiu, Wang, K.~S. and Teruko, M. (2006).
+\newblock A fast, accurate deterministic parser for chinese.
+\newblock In {\em Proceedings of COLING/ACL}, page 425–432, Sydney,
+  Australia.
+
+\bibitem[Michael, 1999]{1999Collins}
+Michael, C. (1999).
+\newblock Head-driven statistical models for natural language parsing.
+\newblock In {\em Ph.D. thesis}, University of Pennsylvania.
+
+\bibitem[Michael and Brian, 2004]{2004Collins}
+Michael, C. and Brian, R. (2004).
+\newblock Incremental parsing with the perceptron algorithm.
+\newblock In {\em Proceedings of ACL}, Stroudsburg, PA, USA.
+
+\bibitem[Slav and Dan, 2007]{2007petrov}
+Slav, P. and Dan, K. (2007).
+\newblock Improved inference for unlexicalized parsing.
+\newblock In {\em Proceedings of HLT/NAACL}, pages 404--411, Rochester, New
+  York.
+
+\bibitem[Yue and Stephen, 2009]{2009Zhang}
+Yue, Z. and Stephen, C. (2009).
+\newblock Transition-based parsing of the chinese treebank using a global
+  discriminative model.
+\newblock In {\em Proceedings of IWPT}, Paris, France.
+
+\bibitem[Zhu et~al., 2012]{2012Zhu}
+Zhu, M., Zhang, Y., Chen, W., Zhang, M., and Zhu, J. (2012).
+\newblock Fast and accurate shift-reduce constituent parsing.
+\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 434--443, Sofia,
+  Bulgaria. Association for Computational Linguistics.
+
+\end{thebibliography}

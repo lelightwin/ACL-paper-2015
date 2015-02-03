@@ -1,0 +1,39 @@
+\begin{figure}[t]
+		\begin{tabular}{c c}
+		input: & $w_0...w_{n-1}$\\[5pt]
+		axiom & $0:\langle0,\epsilon\rangle:0$\\[5pt]
+		sh &	
+			$\displaystyle \frac{l:\langle j,S\rangle:c} 
+			{l+1:\langle j+1, S|w_j\rangle:c+\xi}\ \ j<n$ 
+		\\[10pt]
+	
+		b$_L(X)$ & 
+			$\displaystyle \frac{l:\langle j,S|s_1|s_0\rangle:c}
+			{l+1:\langle j, S|X(s_1)\rangle:c+\lambda_L}$ 
+		\\[10pt]
+		b$_R(X)$ & 
+			$\displaystyle \frac{l:\langle j,S|s_1|s_0\rangle:c}
+			{l+1:\langle j, S|X(s_0)\rangle:c+\lambda_R}$
+		\\[10pt]
+		
+		u$(X)$ & 
+			$\displaystyle \frac{l:\langle j,S|s_0\rangle:c}
+			{l+1:\langle j, S|X(s_0)\rangle:c+\lambda_U}$
+		\\[10pt]
+		
+		$Fin$ & 
+			$\displaystyle \frac{2n+\alpha-1:\langle n,s_0\rangle:c}
+			{2n+\alpha:\langle n, \emptyset \rangle:c+\rho}$
+		\\[10pt]
+		\end{tabular}
+	\\
+	where $l$ is the step, c is the total cost. the shift cost $\xi$, left/right binary cost $\lambda_L$, $\lambda_R$, unary cost $\lambda_U$, finish cost $\rho$ are:
+	\\
+	\begin{equation}		\xi = w \cdot \Phi_{sh}(j,S)  \end{equation}
+	\begin{equation}		\lambda_L = w \cdot \Phi_{b_L(X)}(j,S) 	\end{equation}
+	\begin{equation}		\lambda_R = w \cdot \Phi_{b_R(X)}(j,S) 	\end{equation}
+	\begin{equation}		\lambda_U = w \cdot \Phi_{u(X)}(j,S) 	\end{equation}
+	\begin{equation}		\rho = w \cdot \Phi_{Fin}(2n+\alpha,s_0) 	\end{equation}
+
+	\caption{\label{deductive}Deductive system for conventional shift-reduce constituent parser.}
+\end{figure}

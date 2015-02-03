@@ -1,0 +1,82 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Bohnet \bgroup et al.\egroup }2013]{BohnetJMA13}
+Bernd Bohnet, Joakim Nivre, Igor~M. Boguslavsky, Rich{\'a}rd Farkas, and Jan
+  Haji{\v{c}}.
+\newblock 2013.
+\newblock Joint morphological and syntactic analysis for richly inflected
+  languages.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  1(Oct):429--440.
+
+\bibitem[\protect\citename{Hatori \bgroup et al.\egroup
+  }2012]{hatori-EtAl:2012:ACL2012}
+Jun Hatori, Takuya Matsuzaki, Yusuke Miyao, and Jun'ichi Tsujii.
+\newblock 2012.
+\newblock Incremental joint approach to word segmentation, pos tagging, and
+  dependency parsing in chinese.
+\newblock In {\em Proceedings of the 50th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 1045--1053, Jeju
+  Island, Korea, July. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Nivre}2003]{NivreAEA03}
+Joakim Nivre.
+\newblock 2003.
+\newblock An efficient algorithm for projective dependency parsing.
+\newblock In {\em Proceedings of the 8th International Workshop on Parsing
+  Technologies (IWPT)}, pages 149--160.
+
+\bibitem[\protect\citename{Petrov \bgroup et al.\egroup }2006]{Petrov:2006:ACL}
+Slav Petrov, Leon Barrett, Romain Thibaux, and Dan Klein.
+\newblock 2006.
+\newblock Learning accurate, compact, and interpretable tree annotation.
+\newblock In {\em Proceedings of the 21st International Conference on
+  Computational Linguistics and the 44th Annual Meeting of the Association for
+  Computational Linguistics}, ACL-44, pages 433--440, Stroudsburg, PA, USA.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Wang and Xue}2014]{wang-xue:2014:P14-1}
+Zhiguo Wang and Nianwen Xue.
+\newblock 2014.
+\newblock Joint pos tagging and transition-based constituent parsing in chinese
+  with non-local features.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 733--742,
+  Baltimore, Maryland, June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Zhang and Clark}2009]{zhang-clark:2009:IWPT09}
+Yue Zhang and Stephen Clark.
+\newblock 2009.
+\newblock Transition-based parsing of the chinese treebank using a global
+  discriminative model.
+\newblock In {\em Proceedings of the 11th International Conference on Parsing
+  Technologies (IWPT'09)}, pages 162--171, Paris, France, October. Association
+  for Computational Linguistics.
+
+\bibitem[\protect\citename{Zhang and Nivre}2011]{zhang-nivre:2011:ACL-HLT2011}
+Yue Zhang and Joakim Nivre.
+\newblock 2011.
+\newblock Transition-based dependency parsing with rich non-local features.
+\newblock In {\em Proceedings of the 49th Annual Meeting of the Association for
+  Computational Linguistics: Human Language Technologies}, pages 188--193,
+  Portland, Oregon, USA, June. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Zhao \bgroup et al.\egroup
+  }2013]{zhao-cross-huang:2013:EMNLP}
+Kai Zhao, James Cross, and Liang Huang.
+\newblock 2013.
+\newblock Optimal incremental parsing via best-first dynamic programming.
+\newblock In {\em Proceedings of the 2013 Conference on Empirical Methods in
+  Natural Language Processing}, pages 758--768, Seattle, Washington, USA,
+  October. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Zhu \bgroup et al.\egroup
+  }2013]{zhu-EtAl:2013:ACL20131}
+Muhua Zhu, Yue Zhang, Wenliang Chen, Min Zhang, and Jingbo Zhu.
+\newblock 2013.
+\newblock Fast and accurate shift-reduce constituent parsing.
+\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 434--443, Sofia,
+  Bulgaria, August. Association for Computational Linguistics.
+
+\end{thebibliography}

@@ -1,0 +1,166 @@
+%
+% File acl2014.tex
+%
+% Contact: koller@ling.uni-potsdam.de, yusuke@nii.ac.jp
+%%
+%% Based on the style files for ACL-2013, which were, in turn,
+%% Based on the style files for ACL-2012, which were, in turn,
+%% based on the style files for ACL-2011, which were, in turn, 
+%% based on the style files for ACL-2010, which were, in turn, 
+%% based on the style files for ACL-IJCNLP-2009, which were, in turn,
+%% based on the style files for EACL-2009 and IJCNLP-2008...
+
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt]{article}
+\usepackage{acl2014}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{qtree}
+
+%\setlength\titlebox{5cm}
+
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+
+\title{A* search for shift-reduce constituent parsing}
+
+\author{Thang Le Quang \\
+  SoICT - HUST\\
+  {\tt lelightwin@gmail.com} \\\And
+  Yusuke Miyao \\
+  National Informatic Institute\\
+  {\tt Yusuke@nii.ac.jp} \\\And
+  Hiroshi Noji \\
+  National Informatic Institute\\
+  {\tt Noji@nii.ac.jp} \\}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{abstract.tex}
+\input{Section1.tex}
+\input{Section2.tex}
+\input{Section3.tex}
+\input{Section4.tex}
+\input{Section5.tex}
+\input{Section6.tex}
+
+% include your own bib file like this:
+%\bibliographystyle{acl}
+%\bibliography{acl2014}
+
+\begin{thebibliography}{Reference}
+
+\bibitem[David, 2014]{ref:2014David}
+\newblock David Hall, Greg Durrett and Dan Klein. 2014.
+\newblock Less Grammar, More Features.
+\newblock In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages: 228-337, Baltimore, Maryland.
+	
+\bibitem[Zhao, 2013]{ref:2013Zhao}
+\newblock Kai Zhao, Jame Cross and Liang Huang. 2013.
+\newblock Optimal Incremental Parsing via Best-First Dynamic Programming.
+\newblock In Proceedings of EMNLP 2013.
+
+\bibitem[Zhu, 2012]{ref:2012Zhu}
+\newblock Muhua Zhu, Yue Zhang, Wenliang Chen, Min Zhang and Jingbo Zhu. 2013.
+\newblock Fast and Accurate Shift-Reduce Constituent Parsing
+\newblock In proceedings of ACL 2013. Sophia, Bulgaria. August.
+ 
+\bibitem[Huang, 2010]{ref:2010Huang}
+\newblock Liang Huang and Kenji Sagae. 2010. 
+\newblock Dynamic programming for linear-time incremental parsing. 
+\newblock In Proceedings of ACL 2010.
+
+\bibitem[Zhang, 2009]{ref:2009Zhang}
+\newblock Yue Zhang and Stephen Clark. 2009.
+\newblock Transition-based parsing of the Chinese Treebank using a global discriminative model.
+\newblock In Proceedings of IWPT, Paris, France, October.
+
+\bibitem[Xavier, 2008]{ref:2008Xavier}
+\newblock Xavier Carreras, Michael Collins, and Terry Koo. 2008.
+\newblock Tag, dynamic programming, and the perceptron for efficient, feature-rich parsing.
+\newblock In Proceedings of CoNLL, pages 9-16, Manchester, England.
+
+\bibitem[Huang, 2008]{ref:2008Huang}
+\newblock Liang Huang. 2008.
+\newblock Forest reranking: discriminative parsing with non-local features.
+\newblock In Proceedings of ACL, pages 586-594, Ohio, USA.
+
+\bibitem[Petrov, 2007]{ref:2007petrov}
+\newblock Slav Petrov and Dan Klein. 2007.
+\newblock Improved inference for unlexicalized parsing.
+\newblock In Proceedings of HLT/NAACL, pages 404-411, Rochester, New York, April.
+
+\bibitem[McClosky, 2006]{ref:2006Closky}
+\newblock David McClosky, Eugene Charniak, and Mark Johnson. 2006.
+\newblock Effective self-training for parsing.
+\newblock In Proceedings of the HLT/NAACL, Main Conference, pages 152-159, New York City, USA, June.
+
+\bibitem[Sagae, 2006]{ref:2006Sagae}
+\newblock Kenji Sagae and Alon Lavie. 2006.
+\newblock A best-first probabilistic shift-reduce parser
+\newblock In Proceedings of the COLING/ACL, Main Conference, poster sessions, pages 691-698
+
+\bibitem[Charniak, 2005]{ref:2005Charniak}
+\newblock Eugune Charniak and Mark Johnson. 2005.
+\newblock Coarse-to-fine n-best parsing and maxent discriminative reranking.
+\newblock In Proceeding of ACL, pages 173-180.
+
+\bibitem[Henderson, 2004]{ref:2004Henderson}
+\newblock James Henderson. 2004.
+\newblock Discriminative training of a neural network statistical parser.
+\newblock In Proceedings of ACL.
+
+\bibitem[Collins, 2004]{ref:2004Collins}
+\newblock Michael Collins and Brian Roark. 2004.
+\newblock Incremental parsing with the perceptron algorithm.
+\newblock In Proceedings of ACL, Stroudsburg, PA, USA.
+
+\bibitem[Taskar, 2004]{ref:2004Taskar}
+\newblock Ben Taskar, Dan Klein, Michael Collins, Daphne Koller, and Chris Manning. 2004.
+\newblock Max-margin parsing.
+\newblock In Proceedings of EMNLP.
+
+\bibitem[Dan2, 2003]{ref:2003Dan2}
+\newblock Dan Klein and Christopher D Manning. 2003. 
+\newblock Accurate Unlexicalized Parsing  
+\newblock In Proceedings of ACL 2003.
+
+\bibitem[Dan1, 2003]{ref:2003Dan1}
+\newblock Dan Klein and Christopher D Manning. 2003. 
+\newblock A* parsing: Fast exact Viterbi parse selection. 
+\newblock In Proceedings of HLT-NAACL.
+
+\bibitem[Collins, 2000]{ref:2000Collins}
+\newblock Michael Collins. 2000.
+\newblock Discriminative reranking for natural language processing.
+\newblock In Proceedings of ICML, pages 175–182, Stanford, CA, USA.
+
+\bibitem[Collins, 1999]{ref:1999Collins}
+\newblock Michael Collins. 1999.
+\newblock Head-driven statistical models for natural language parsing. 
+\newblock Ph.D. thesis, University of Pennsylvania.
+
+\bibitem[Collins, 1997]{ref:1997Collins}
+\newblock Michael Collins. 1997.
+\newblock Three generative, lexicalised models for statistical parsing. 
+\newblock In Proceedings of ACL, Madrid, Spain.
+ 
+\bibitem[Tomita, 1991] {ref:1991Tomita}
+\newblock Masaru Tomita. 1991.
+\newblock Generalized LR Parsing.
+\newblock Kluwer Academic Publishers.
+
+\end{thebibliography}
+
+\end{document}

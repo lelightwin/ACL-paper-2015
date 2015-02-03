@@ -1,0 +1,26 @@
+\section{Basic Architecture}
+	The goal of this section is to establish our basic parsing system other than our improvements explained in Section 4.
+\subsection{Unary merging actions}
+	\begin{itemize}
+		\item Modifying the convention shift-reduce actions by merging UNARY action with SHIFT and B-REDUCE actions:
+			\begin{itemize}
+				\item SHIFT\_UNARY(X): in case of X=NULL, this is a conventional SHIFT action.
+				\item B-REDUCE(Y)\_UNARY(X): in case of X=NULL, this is a conventional B-REDUCE action.
+			\end{itemize}
+		\item Advantage: 
+			\begin{itemize}
+				\item Normalize the number of actions for each parse tree will always be $2n$, with $n$ is the length of input sentence.
+				\item It is similar to padding methods in \cite{2012Zhu}, but more consistent.
+				\item In dependency parsing, there is no need for using unary merging actions or padding method.
+			\end{itemize}
+	\end{itemize}
+\subsection{Global Linear Best-First Parsing}
+	\begin{itemize}
+		\item The deductive system of our Best-First Parsing.
+		\item Adding an offset to each action score to solve the negative-score problem.
+	\end{itemize}
+\subsection{Search Quality}
+	\begin{itemize}
+		\item Making comparison experiment between the search quality of Best-First Maxent and Best-First structured perceptron. The experiment has been taken on section 22 with 
+		\item Based on the results, indicate that Zhao's parser had worked because Maxent model is sparser than Structured perceptron model.
+	\end{itemize}
